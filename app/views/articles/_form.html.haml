@@ -1,0 +1,31 @@
+= form_for(@article) do |f|
+  - if @article.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@article.errors.count, "error")
+        prohibited this article from being saved:
+      %ul
+        - @article.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :title
+    %br
+    = f.text_field :title
+  .field
+    = f.label :tag_list, 'Tags (with comma separator)'
+    %br
+    = f.text_field :tag_list
+  .field
+    = f.label :content
+    %br
+    = f.text_area :content
+  .field
+    = f.label :published_at, 'Created at'
+    %br
+    = f.datetime_select :published_at
+  .field
+    = f.label :is_published
+    %br
+    = f.check_box :is_published
+  .actions
+    = f.submit

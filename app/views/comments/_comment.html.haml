@@ -1,0 +1,11 @@
+#comment__block
+  %p
+    = "#{comment.user.email}   |  #{comment.created_at.to_formatted_s(:long)}"
+  %p
+    = comment.content
+
+  - if can_be_edited?(comment)
+    = link_to 'Edit', edit_article_comment_path(@article, comment)
+    |
+    = link_to 'Destroy', [@article, comment], method: :delete
+

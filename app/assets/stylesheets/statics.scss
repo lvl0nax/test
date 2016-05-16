@@ -1,0 +1,94 @@
+#statics__block {
+  height: 500px;
+}
+#caruosel {
+  position: relative;
+}
+.slide-wrapper {
+  position: absolute;
+  top: 0;
+}
+.slide {
+  width: 600px;
+  height: 400px;
+  position: relative;
+}
+.slide-face {
+  background-image: url('/face.jpg');
+  z-index: 100;
+}
+.slide-gate {
+  background-image: url('/gate.jpg');
+  z-index: 1;
+}
+.slide-motocycle {
+  background-image: url('/motocycle.jpg');
+  z-index: 1;
+}
+
+.slide-content__wrapper {
+  position: absolute;
+  bottom: 17px;
+  width: 100%;
+}
+
+.slide__content {
+  background-color: rgba(0,0,0,0.6);
+  width: 566px;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 5px;
+  table {
+    height: 100%;
+  }
+  .slide-arrow{
+    width: 30px;
+    background-color: #222;
+    border-radius: 100px;
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+    font-size: 30px;
+    line-height: 25px;
+    text-align: center;
+    margin-left: 8px;
+    padding-bottom: 5px;
+  }
+  .slide__content__arrows {
+    text-align: center;
+    width: 15%;
+    vertical-align: middle;
+  }
+  .slide__content__text {
+    width: 50%;
+    text-align: left;
+    color: #f0f0f0;
+    vertical-align: middle;
+    padding-left: 10px;
+    font-size: 16px;
+  }
+  .slide__content__button {
+    text-align: right;
+    padding-right: 10px;
+    width: 35%;
+    vertical-align: middle;
+  }
+  .yellow_button {
+    background: #fceabb;
+    background: linear-gradient(to bottom, #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%);
+    text-decoration: none;
+    color: #631;
+    font-weight: bold;
+    padding: 3px 5px;
+    border-radius: 3px;
+    &:hover{
+      text-decoration: none;
+      color: #631;
+    }
+  }
+}
+
+.slide__content > div{
+  display: inline-block;
+}
+

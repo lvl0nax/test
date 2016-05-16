@@ -1,0 +1,30 @@
+#cloud__block
+  %p Tags cloud:
+  - tag_cloud Article.tag_counts, %i(small medium large) do |tag, css_class|
+    = link_to tag.name, url_for(tag: tag.name), class: css_class
+%br
+%br
+#articles__block
+  %p#notice= notice
+
+  %h1 Listing Articles
+  %br
+
+  - @articles.each do |article|
+    .article
+      %p= link_to article.title, article
+      %p= "#{article.published_at.to_formatted_s(:long)} | #{article.user.email}"
+      %p= article.content
+      %p
+        %b
+          TAGS:
+        = raw article.tag_list.map { |t| link_to t, url_for(tag: t) }.join(', ')
+
+      - if can_be_edited?(article)
+        = link_to 'Edit', edit_article_path(article)
+        |
+        = link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }
+    %br
+
+  %br
+  = paginate @articles

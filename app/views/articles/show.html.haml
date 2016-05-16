@@ -1,0 +1,32 @@
+%p#notice= notice
+%p
+  %strong Title:
+  = @article.title
+%p
+  %strong Tags:
+  =raw @article.tag_list.map { |t| link_to t, articles_path(tag: t) }.join(', ')
+%p
+  %strong Content:
+  = @article.content
+%p
+  %strong Created at:
+  = @article.published_at.to_formatted_s(:long)
+%p
+  %strong User:
+  = @article.user.email
+- if can_be_edited?(@article)
+  = link_to 'Edit', edit_article_path(@article)
+  |
+  = link_to 'Destroy', @article, method: :delete
+  |
+= link_to 'Back', articles_path
+
+
+#article__comments
+  - @comments.each do |comment|
+    %br
+    = render 'comments/comment', comment: comment
+
+  %br
+  %h2 New Comment
+  = render 'comments/form'

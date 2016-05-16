@@ -1,0 +1,99 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, canvas, details, embed, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details,
+footer, header, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+#wrapper {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+#navigation {
+  float: left;
+  height: 40px;
+  width: 960px;
+  background: #1f5c99;
+  padding: 0 20px;
+  a{
+    line-height: 40px;
+    font-size: 20px;
+    color: #aaa;
+    text-decoration: none;
+    &:hover{
+      background: none;
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+}
+
+#content {
+  float: left;
+  background: #FFFFFF;
+  width: 1000px;
+  padding: 15px 0;
+  %p{
+    margin-bottom: 5px;
+  }
+  %b{
+    font-weight: bold;
+  }
+}
+
+#footer {
+  height: 100px;
+  width: 1000px;
+  background: #1f5c99;
+  clear: both;
+}
+
+#comment__block{
+  padding-left: 30px;
+}
